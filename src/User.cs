@@ -1,10 +1,10 @@
 public class User : LibraryItem
 {
-    string name { get; set; }
+    public string Name { get; set; }
 
     public User(string name, DateTime date = default)
     {
-        this.name = name;
-        dateCreated = date == default ? DateTime.Now : date;
+        Name = name;
+        DateCreated = date == default ? DateTime.Now : date;
     }
 }

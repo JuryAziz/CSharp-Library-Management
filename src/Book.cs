@@ -1,10 +1,10 @@
 public class Book : LibraryItem
 {
-    string title { get; set; }
+    public string Title { get; set; }
 
     public Book(string title, DateTime date = default)
     {
-        this.title = title;
-        dateCreated = date == default ? DateTime.Now : date;
+        Title = title;
+        DateCreated = date == default ? DateTime.Now : date;
     }
 }
