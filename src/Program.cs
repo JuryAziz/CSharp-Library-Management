@@ -35,6 +35,54 @@ internal class Program
         var book19 = new Book("The Iliad");
         var book20 = new Book("Anna Karenina");
 
-        
+
+        Library SMS_Library = new(new SMSNotificationService());
+
+        SMS_Library.AddBook(book1);
+        SMS_Library.AddBook(book2);
+        SMS_Library.AddBook(book3);
+        SMS_Library.AddBook(book4);
+        SMS_Library.AddBook(book5);
+        SMS_Library.AddBook(book6);
+        SMS_Library.AddBook(book7);
+        SMS_Library.AddBook(book8);
+        SMS_Library.AddBook(book9);
+        SMS_Library.AddBook(book10);
+
+        SMS_Library.AddUser(user1);
+        SMS_Library.AddUser(user2);
+        SMS_Library.AddUser(user3);
+        SMS_Library.AddUser(user4);
+        SMS_Library.AddUser(user5);
+
+        Console.WriteLine($"SMS Library's Books count: {SMS_Library.Books.Count}");
+        Console.WriteLine($"SMS Library's Users count: {SMS_Library.Users.Count}");
+        Console.WriteLine($"SMS Library's Books: {String.Join(", ", SMS_Library.GetAllBooks(1, 5).Select(book => book.Title))}");
+        Console.WriteLine($"SMS Library's Users: {String.Join(", ", SMS_Library.GetAllUsers(1, 2).Select(user => user.Name))}");
+
+
+        Library Email_Library = new(new EmailNotificationService());
+
+        Email_Library.AddBook(book11);
+        Email_Library.AddBook(book12);
+        Email_Library.AddBook(book13);
+        Email_Library.AddBook(book14);
+        Email_Library.AddBook(book15);
+        Email_Library.AddBook(book16);
+        Email_Library.AddBook(book17);
+        Email_Library.AddBook(book18);
+        Email_Library.AddBook(book19);
+        Email_Library.AddBook(book20);
+
+        Email_Library.AddUser(user6);
+        Email_Library.AddUser(user7);
+        Email_Library.AddUser(user8);
+        Email_Library.AddUser(user9);
+        Email_Library.AddUser(user10);
+
+        Console.WriteLine($"Email Library's Books count: {Email_Library.Books.Count}");
+        Console.WriteLine($"Email Library's Users count: {Email_Library.Users.Count}");
+        Console.WriteLine($"Email Library's Books: {String.Join(", ", Email_Library.GetAllBooks(1, 5).Select(book => book.Title))}");
+        Console.WriteLine($"Email Library's Users: {String.Join(", ", Email_Library.GetAllUsers(1, 2).Select(user => user.Name))}");
     }
 }

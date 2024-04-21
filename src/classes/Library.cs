@@ -1,5 +1,6 @@
-﻿class Library
+﻿class Library(INotificationService? NotificationService = null)
 {
+    readonly INotificationService? NotificationService = NotificationService;
     public List<Book> Books { get; } = [];
     public List<User> Users { get; } = [];
 
